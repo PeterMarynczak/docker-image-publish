@@ -13,4 +13,5 @@ jobs:
           docker build . -t petermarynczak/hello-docker-hub:latest
       - name: publish
         run: |
+          docker login -u petermarynczak -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push petermarynczak/hello-docker-hub:latest
